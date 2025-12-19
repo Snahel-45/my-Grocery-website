@@ -1,36 +1,37 @@
 import React from 'react'
 import Home from './components/Home/Home'
 import Fruits from './components/Fruits/Fruits'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Dairy from './components/Dairy/Dairy'
 import SeaFood from './components/SeaFood/SeaFood'
 import AllProducts from './components/AllProducts/AllProducts'
 import Layout from './components/Layout/Layout'
 
-const router = createBrowserRouter([
+import { createHashRouter, RouterProvider } from 'react-router-dom'
+
+const router = createHashRouter([
   {
     path: '/',
     element: <Layout />,
     children: [
       {
-        path:'/',
-        element: <Home/>
+        index: true,
+        element: <Home />
       },
       {
-        path: '/fruits',
-        element: <Fruits />,
+        path: 'fruits',
+        element: <Fruits />
       },
       {
-        path: '/dairy',
-        element: <Dairy />,
+        path: 'dairy',
+        element: <Dairy />
       },
       {
-        path: '/seafood',
-        element: <SeaFood />,
+        path: 'seafood',
+        element: <SeaFood />
       },
       {
-        path: '/allproducts',
-        element: <AllProducts />,
+        path: 'allproducts',
+        element: <AllProducts />
       }
     ]
   }
